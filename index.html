@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html ng-app="flickerApp">
+    <head >
         <title>
             FlickerDemo
         </title>
@@ -11,10 +11,11 @@
         </script>
         <script type="text/javascript" src="./assets/js/lib/angular.min.js">
         </script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
     </head>
-    <body>
+    <body >
         <header>
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
@@ -26,7 +27,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Dashboard</a>
                         </li>
-                        <li> <a href="#"> Users</a>             
+                        <li> <a href="#users"> Users</a>             
                         </li>
                     </ul>
                 </div>
@@ -35,19 +36,8 @@
         <div ng-view>
         	
         </div>
-        <script type="text/javascript">
-        		var userDatabase = new Firebase("https://glowing-torch-7267.firebaseio.com/web/saving-data/FlickerDemo");
-        		var userData = userDatabase.child("users");
-				userData.set({
-  							alanisawesome: {
-    							date_of_birth: "June 23, 1912",
-    							full_name: "Alan Turing"
-  							},
-  							gracehop: {
-    							date_of_birth: "December 9, 1906",
-    							full_name: "Grace Hopper"
-  							}
-					});
-        </script>
+       <script type="text/javascript" src="./routes/route.js"></script>
+       <script type="text/javascript" src="./controllers/usersController.js"></script>
+        <script type="text/javascript" src="./controllers/userGalleryController.js"></script>
     </body>
 </html>

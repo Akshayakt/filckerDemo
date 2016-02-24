@@ -1,0 +1,15 @@
+<div>
+  		<h1>Users</h1>
+            <ul>
+                <li ng-repeat="user in usersArry">
+                    
+               <!-- <a href="userName">{{ user.userName }}</a> -->
+               <span ng-repeat="img in user.images">
+               		<img ng-src="{{img.imageUrl}}" />
+                		</img>
+               </span>
+               
+               
+            </li>
+        </ul>
+        
